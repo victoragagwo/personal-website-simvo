@@ -1,0 +1,38 @@
+<!-- HTML -->
+<html>
+    <div id="title">
+        <h1>Welcome to my page</h1>
+        <p>This is a sample webpage with a background image, styled text, and a button that triggers an alert.</p>
+        <button onclick="makeDreamsComeTrue()">Make dreams come through</button>
+    </div>
+</html>
+
+<!-- CSS styles -->
+
+<style>
+    body{
+        background-image: url('https://preview.redd.it/sgstu8q9ps721.jpg?width=640&crop=smart&auto=webp&s=31ad261e95d5b6043d98713422e9ea01b9049181');
+        background-size: cover;
+    }
+    h1 {
+        color: blue;
+    }
+    button:hover {
+        background-color: red;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    #title {
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+
+<!-- JavaScript code -->
+ <script>
+    function makeDreamsComeTrue() {
+        document.body.style.background= 'url("https://i.pinimg.com/originals/47/12/89/471289cde2490c80f60d5e85bcdfb6da.gif")';
+        document.getElementById("title").style.visibility = "hidden";
+    }
+ </script>
