@@ -1,6 +1,11 @@
 <!-- HTML -->
+<!DOCTYPE html>
 <html>
-    <div id="title">
+<head>
+    <title>My Page</title>
+    <link rel="stylesheet" type="text/css" href="titlesection/titlesection.css">
+</head>
+    <div class="main-section" id="title">
         <h1>Welcome to my page</h1>
         <p>This is a sample webpage with a background image, styled text, and a button that triggers an alert.</p>
         <button onclick="makeDreamsComeTrue()">Make dreams come through</button>
@@ -14,18 +19,11 @@
         background-image: url('https://preview.redd.it/sgstu8q9ps721.jpg?width=640&crop=smart&auto=webp&s=31ad261e95d5b6043d98713422e9ea01b9049181');
         background-size: cover;
     }
-    h1 {
-        color: blue;
-    }
-    button:hover {
-        background-color: red;
-        cursor: pointer;
-        font-size: 20px;
-    }
-    #title {
-        width: 100%;
-        text-align: center;
-        margin-top: 50px;
+
+    .main-section{
+        width: 100vw;
+        height: 100vh;
+        border: solid white 1px;
     }
 </style>
 
