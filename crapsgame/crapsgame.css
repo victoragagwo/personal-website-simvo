@@ -1,0 +1,21 @@
+#craps-game {
+    background-image: url('https://wallpapers.com/images/hd/colorful-las-vegas-night-paj2q76otk84ihtj.jpg');
+    background-position: center top; 
+    height: max-content;
+    color: white;
+}
+
+.craps-game-title {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.craps-game-container{
+    width: 700px;
+    height: 500px;
+    border: 2px solid white;
+    margin: 60px auto 0 auto;
+    background-image: url('https://t3.ftcdn.net/jpg/10/36/41/12/360_F_1036411251_3Tis5Uh4b4XLdqAFf3VrS9QraHtCoV7E.jpg');
+    background-size: cover;
+    background-position: center top;
+}
