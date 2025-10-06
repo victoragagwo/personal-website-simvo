@@ -49,7 +49,20 @@
     <div class="main-section" id="craps-game">
         <h1 class="craps-game-title">Craps Casino Game</h1>
         <div class="craps-game-container">
-
+            <div id="craps-resgistration-pane">
+                <div>
+                    Enter username to begin
+                </div>
+                <div>
+                    <input class="craps-resgistration-input" id="craps-username-input"></input>
+                </div>
+                <div class="craps-registration-continue" onclick="registerCrapsPlayer()">
+                    Continue
+                </div>
+            </div>
+            <div id="craps-main-section">
+                MAIN SECTION
+            </div>
         </div>
     </div>
 </body>
@@ -91,6 +104,7 @@ html, body {
 </style>
 
 <!-- JavaScript code -->
+<script src="./crapsgame/crapsgame.js"></script>
  <script>
     function makeDreamComeTrue() {
         document.body.style.background= 'url("https://i.pinimg.com/originals/47/12/89/471289cde2490c80f60d5e85bcdfb6da.gif")';
