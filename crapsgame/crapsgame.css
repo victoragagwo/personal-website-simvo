@@ -1,0 +1,164 @@
+:root {
+    --width-scale: min(700px, 80vw, 80vh);
+    --height-scale: calc(var(--width-scale) * 0.7142857);
+    --game-title-size: min(calc(var(--height-scale)* 0.1), 2em);
+    --title-margin-bottom: calc(var(--height-scale) * 0.15);
+}
+#craps-game {
+    background-image: url('https://wallpapers.com/images/hd/colorful-las-vegas-night-paj2q76otk84ihtj.jpg');
+    background-position: center top; 
+    height: max-content;
+    color: white;
+    padding: 1px;
+}
+
+.craps-game-title {
+    font-size: var(--game-title-size);
+    text-align: center;
+    margin-top: calc(calc(100vh - var(--game-title-size) - var(--title-margin-bottom) - var(--height-scale)) / 2);
+    margin-bottom: var(--title-margin-bottom); 
+}
+
+.craps-game-container{
+    width: var(--width-scale);
+    height: var(--height-scale);
+    border: 2px solid white;
+    margin: 0 auto;
+    background-image: url('https://t3.ftcdn.net/jpg/10/36/41/12/360_F_1036411251_3Tis5Uh4b4XLdqAFf3VrS9QraHtCoV7E.jpg');
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+}
+
+#craps-resgistration-pane{
+    margin-top: calc(var(--height-scale) * 0.15);
+    font-size: calc(var(--game-title-size) * 0.5);
+    text-align: center;
+}
+
+.craps-resgistration-input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    /* fixed margin syntax: top/bottom and left/right */
+    margin: calc(var(--height-scale) * 0.055) 0;
+    color: white;
+    font-size: calc(var(--game-title-size) * 0.5);
+    text-align: center;
+}
+
+.craps-resgistration-input:focus {
+    outline: none;
+}
+
+.craps-registration-continue:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#craps-main-section {
+    display: none;
+}
+
+.craps-main-section-stats {
+    text-align: center;
+    font-size: calc(var(--height-scale) * 0.05);
+    margin-top: calc(var(--height-scale) * 0.15);
+}
+
+#craps-stats-money-container {
+    /* increased from 0.005 to match other stats */
+    font-size: calc(var(--height-scale) * 0.1);
+    margin: calc(var(--height-scale) * 0.04);
+}
+
+.craps-on-table-container {
+    margin: calc(var(--height-scale) * 0.05);
+    font-size: calc(var(--height-scale) * 0.04);
+    text-align: center;
+}
+
+.craps-round-manager{
+    position: absolute;
+    bottom: calc(var(--height-scale) * 0.04);
+    font-size: calc(var(--height-scale) * 0.04);
+    width: 100%;
+    text-align: center;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.craps-roll-dice-container{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.craps-roll-dice-container:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#craps-roll-dice-animation-container {
+    margin-top: calc(var(--height-scale) * -0.12);
+    margin-left: calc(var(--height-scale) * -0.12);
+}
+
+.craps-betting-grid {
+    display: grid;
+    grid-template-columns: 33% auto 33%;
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+.craps-bet-button, .craps-round-finish-button {
+    padding: calc(var(--height-scale) * 0.03);
+}
+
+.craps-bet-button:hover, .craps-round-finish-button:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.craps-bet-amount-container{
+    padding: calc(var(--height-scale) * 0.03);
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    background-color:rgba(0, 0, 0, 0.5) ;
+}
+
+#craps-user-bet-amount {
+    margin: 0 calc(var(--height-scale) * 0.03);
+}
+
+.craps-user-bet-amount-change:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.craps-round-finish-grid {
+    display: grid;
+    grid-template-columns: 33% auto 33%;
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 5px;
+}
+
+#craps-round-finish-message{
+     padding: calc(var(--height-scale) * 0.03);
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    background-color:rgba(0, 0, 0, 0.5) ;
+}
+
+#craps-next-round-button-disabled{
+    background-color:rgba(0, 0, 0, 0.5) ;
+    color: gray;
+}
+
+#craps-next-round-button-disabled:hover{
+    cursor: not-allowed;
+}
