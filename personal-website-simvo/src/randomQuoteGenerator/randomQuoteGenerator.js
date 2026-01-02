@@ -18,6 +18,10 @@ function getRandomColorCombo() {
     return colors[randomIndex];
 }
 async function getNewRandomQuote() {
+    // Set background color immediately to avoid white background during slow network
+    const colorCombo = getRandomColorCombo();
+    randomQuoteGeneratorElement.style.background = 'linear-gradient(45deg, ' + colorCombo[0] + ', ' + colorCombo[1] + ')';
+    
     const response = await fetch('https://api.quotable.io/random');
     if (!response.ok) {
         alert('There was a problem getting a new quote!');
@@ -29,7 +33,4 @@ async function getNewRandomQuote() {
     const quoteAuthor = data.author;
     document.getElementById('random-quote-text').innerHTML = quoteText;
     document.getElementById('random-quote-author').innerHTML = quoteAuthor;
-
-    const colorCombo = getRandomColorCombo();
-    randomQuoteGeneratorElement.style.background = 'linear-gradient(45deg, ' + colorCombo[0] + ', ' + colorCombo[1] + ')';
 }
