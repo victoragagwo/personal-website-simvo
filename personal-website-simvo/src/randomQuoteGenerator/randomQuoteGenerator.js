@@ -1,4 +1,7 @@
 const randomQuoteGeneratorElement = document.getElementById('random-quote-generator');
+const quoteTextElement = document.getElementById('random-quote-text');
+const quoteAuthorElement = document.getElementById('random-quote-author');
+const quoteStatusElement = document.getElementById('random-quote-status');
 const colors = [
     [ "#FF8080", "#FFCF96" ],
     [ "#96FF96", "#96FFFF" ],
@@ -21,21 +24,48 @@ function getRandomColorCombo() {
 
 async function getNewRandomQuote() {
     try {
+        if (quoteStatusElement) {
+            quoteStatusElement.innerText = 'Loading quote...';
+        }
+        if (quoteTextElement) {
+            quoteTextElement.innerText = '';
+        }
+        if (quoteAuthorElement) {
+            quoteAuthorElement.innerText = '';
+        }
+
         const response = await fetch('https://text-analysis-tool-en1g.onrender.com/api/quotes');
         if (!response.ok) {
-            return;
+            throw new Error(`Quote API responded with ${response.status}`);
         }
+
         const data = await response.json();
+        if (!Array.isArray(data) || data.length === 0) {
+            throw new Error('Quote API returned no quotes');
+        }
+
         const randomQuote = data[Math.floor(Math.random() * data.length)];
-        
-        const quoteText = randomQuote.text;
+        const quoteText = randomQuote.text || 'Quote unavailable.';
         const quoteAuthor = randomQuote.author ? randomQuote.author.replace(', type.fit', '') : 'Unknown';
-        document.getElementById('random-quote-text').innerHTML = quoteText;
-        document.getElementById('random-quote-author').innerHTML = quoteAuthor;
+
+        if (quoteTextElement) {
+            quoteTextElement.innerText = quoteText;
+        }
+        if (quoteAuthorElement) {
+            quoteAuthorElement.innerText = quoteAuthor;
+        }
+        if (quoteStatusElement) {
+            quoteStatusElement.innerText = '';
+        }
 
         const colorCombo = getRandomColorCombo();
-        randomQuoteGeneratorElement.style.background = 'linear-gradient(45deg, ' + colorCombo[0] + ', ' + colorCombo[1] + ')';
+        if (randomQuoteGeneratorElement) {
+            randomQuoteGeneratorElement.style.background = 'linear-gradient(45deg, ' + colorCombo[0] + ', ' + colorCombo[1] + ')';
+        }
     } catch (error) {
+        if (quoteStatusElement) {
+            quoteStatusElement.innerText = 'Failed to load quote. Please try again.';
+        }
         console.error('Error fetching quote:', error);
     }
 }
